@@ -1,29 +1,32 @@
+//int a=((int)(Math.random()*255));
+//int y=((int)(Math.random()*255));
+//int e=((int)(Math.random()*255));
 public void setup()
 {
-  size(600,600);
-  noLoop();
+size(400,400);
+noLoop();
 }
 public void draw()
 {
-  //text("I am not responsible for any seizures", 200, 75);
-  sierpinski(100,500,400);
+background(50);
+noStroke();
+sierpinski(50,400,300);
 }
-public void mouseDragged()//optional
+public void mouseClicked()//optional
 {
- 
-
-  fill((int)(Math.random()*255),(int)(Math.random()*255),(int)(Math.random()*255));
-
-  redraw();
+//fill(a,y,e);
+fill((int)(Math.random()*255),(int)(Math.random()*255),(int)(Math.random()*255));
+redraw();
 }
 public void sierpinski(int x, int y, int len) 
 {
-  if (len <= 15)
-    triangle(x, y, x+len/2, y-len, x+len, y);
-  else
-  {
-  sierpinski(x,y,len/2);
-  sierpinski(x+len/2, y , len/2 );
-  sierpinski(x+len/4 , y-len/2 , len/2);
-  }
+if(len<=20)
+	triangle(x,y,x+len/2,y-len,x+len,y);
+else
+{
+	sierpinski(x,y,len/2);
+	sierpinski(x+len/2,y,len/2);
+	sierpinski(x+len/4,y-len/2,len/2);
+}
+
 }
