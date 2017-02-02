@@ -20,7 +20,7 @@ redraw();
 }
 public void sierpinski(int x, int y, int len) 
 {
-if(len<=20)
+if(len<=5)
 	triangle(x,y,x+len/2,y-len,x+len,y);
 else
 {
